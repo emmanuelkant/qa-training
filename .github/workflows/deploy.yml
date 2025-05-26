@@ -33,6 +33,13 @@ jobs:
       - name: Build
         run: npm run build
       
+      - name: Generate Coverage Report
+        run: npm run test:coverage
+      
+      - name: Copy Coverage Report
+        run: |
+          cp -r coverage/ dist/coverage
+      
       - name: Setup Pages
         uses: actions/configure-pages@v4
       

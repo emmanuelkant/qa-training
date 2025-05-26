@@ -102,6 +102,11 @@ The project is automatically deployed to GitHub Pages using GitHub Actions. The 
 
 The deployed site will be available at: `https://[your-username].github.io/qa-training/`
 
+### Coverage Report
+
+The test coverage report is also deployed to GitHub Pages and can be accessed at:
+`https://[your-username].github.io/qa-training/coverage/index.html`
+
 ## Project Structure
 
 - `src/` - Source code
