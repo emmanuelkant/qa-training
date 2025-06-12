@@ -43,9 +43,9 @@ export const Calculator = () => {
   };
 
   return (
-    <div>
+    <div className="calculator">
       <h2>Simple Calculator</h2>
-      <div>
+      <div className="inputs">
         <input
           type="number"
           value={num1}
@@ -61,25 +61,40 @@ export const Calculator = () => {
           data-testid="num2-input"
         />
       </div>
-      <div>
-        <button onClick={() => handleCalculate('add')} data-testid="add-button">
+      <div className="buttons">
+        <button 
+          onClick={() => handleCalculate('add')} 
+          data-testid="add-button"
+        >
           Add
         </button>
-        <button onClick={() => handleCalculate('subtract')} data-testid="subtract-button">
+        <button 
+          onClick={() => handleCalculate('subtract')} 
+          data-testid="subtract-button"
+        >
           Subtract
         </button>
-        <button onClick={() => handleCalculate('multiply')} data-testid="multiply-button">
+        <button 
+          onClick={() => handleCalculate('multiply')} 
+          data-testid="multiply-button"
+        >
           Multiply
         </button>
-        <button onClick={() => handleCalculate('divide')} data-testid="divide-button">
+        <button 
+          onClick={() => handleCalculate('divide')} 
+          data-testid="divide-button"
+        >
           Divide
         </button>
-        <button onClick={() => handleCalculate('percentage')} data-testid="percentage-button">
+        <button 
+          onClick={() => handleCalculate('percentage')} 
+          data-testid="percentage-button"
+        >
           Calculate Percentage
         </button>
       </div>
-      {error && <div data-testid="error-message">{error}</div>}
-      {result !== '' && <div data-testid="result">Result: {result}</div>}
+      {error && <div className="error" data-testid="error-message">{error}</div>}
+      {result !== '' && <div className="result" data-testid="result">Result: {result}</div>}
     </div>
   );
 }; 
