@@ -1,4 +1,4 @@
-import { add, subtract, multiply, divide, calculatePercentage } from './mathUtils';
+import { add, subtract, multiply, divide } from './mathUtils';
 
 describe('Math Utils', () => {
   describe('add', () => {
@@ -54,20 +54,6 @@ describe('Math Utils', () => {
 
     it('should throw error when dividing by zero', () => {
       expect(() => divide(5, 0)).toThrow('Division by zero is not allowed');
-    });
-  });
-
-  describe('calculatePercentage', () => {
-    it('should calculate percentage correctly', () => {
-      expect(calculatePercentage(100, 50)).toBe(50);
-    });
-
-    it('should handle zero values', () => {
-      expect(calculatePercentage(0, 50)).toBe(0);
-    });
-
-    it('should handle negative percentages', () => {
-      expect(calculatePercentage(100, -50)).toBe(-50);
     });
   });
 }); 

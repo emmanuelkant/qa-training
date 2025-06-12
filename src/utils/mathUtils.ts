@@ -35,13 +35,3 @@ export const divide = (a: number, b: number): number => {
   }
   return a / b;
 };
-
-/**
- * Calculates the percentage of a number
- * @param value The number to calculate percentage of
- * @param percentage The percentage to calculate
- * @returns The calculated percentage value
- */
-export const calculatePercentage = (value: number, percentage: number): number => {
-  return (value * percentage) / 100;
-}; 

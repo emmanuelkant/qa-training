@@ -14,7 +14,6 @@ describe('Calculator Component', () => {
     expect(screen.getByTestId('subtract-button')).toBeInTheDocument();
     expect(screen.getByTestId('multiply-button')).toBeInTheDocument();
     expect(screen.getByTestId('divide-button')).toBeInTheDocument();
-    expect(screen.getByTestId('percentage-button')).toBeInTheDocument();
   });
 
   it('should perform addition correctly', async () => {
@@ -43,12 +42,5 @@ describe('Calculator Component', () => {
     await userEvent.type(screen.getByTestId('num2-input'), '0');
     fireEvent.click(screen.getByTestId('divide-button'));
     expect(screen.getByTestId('error-message')).toHaveTextContent('Division by zero is not allowed');
-  });
-
-  it('should calculate percentage correctly', async () => {
-    await userEvent.type(screen.getByTestId('num1-input'), '100');
-    await userEvent.type(screen.getByTestId('num2-input'), '50');
-    fireEvent.click(screen.getByTestId('percentage-button'));
-    expect(screen.getByTestId('result')).toHaveTextContent('Result: 50');
   });
 }); 

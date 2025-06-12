@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { add, subtract, multiply, divide, calculatePercentage } from '../utils/mathUtils';
+import { add, subtract, multiply, divide } from '../utils/mathUtils';
 
 export const Calculator = () => {
   const [num1, setNum1] = useState<string>('');
@@ -31,9 +31,6 @@ export const Calculator = () => {
         case 'divide':
           setResult(divide(n1, n2));
           break;
-        case 'percentage':
-          setResult(calculatePercentage(n1, n2));
-          break;
         default:
           setError('Invalid operation');
       }
@@ -62,35 +59,29 @@ export const Calculator = () => {
         />
       </div>
       <div className="buttons">
-        <button 
-          onClick={() => handleCalculate('add')} 
+        <button
+          onClick={() => handleCalculate('add')}
           data-testid="add-button"
         >
           Add
         </button>
-        <button 
-          onClick={() => handleCalculate('subtract')} 
+        <button
+          onClick={() => handleCalculate('subtract')}
           data-testid="subtract-button"
         >
           Subtract
         </button>
-        <button 
-          onClick={() => handleCalculate('multiply')} 
+        <button
+          onClick={() => handleCalculate('multiply')}
           data-testid="multiply-button"
         >
           Multiply
         </button>
-        <button 
-          onClick={() => handleCalculate('divide')} 
+        <button
+          onClick={() => handleCalculate('divide')}
           data-testid="divide-button"
         >
           Divide
-        </button>
-        <button 
-          onClick={() => handleCalculate('percentage')} 
-          data-testid="percentage-button"
-        >
-          Calculate Percentage
         </button>
       </div>
       {error && <div className="error" data-testid="error-message">{error}</div>}
