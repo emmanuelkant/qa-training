@@ -83,6 +83,12 @@ export const Calculator = () => {
         >
           Divide
         </button>
+        <button 
+          onClick={() => handleCalculate('percentage')} 
+          data-testid="percentage-button"
+        >
+          Calculate Percentage
+        </button>
       </div>
       {error && <div className="error" data-testid="error-message">{error}</div>}
       {result !== '' && <div className="result" data-testid="result">Result: {result}</div>}

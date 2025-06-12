@@ -30,11 +30,11 @@ describe('Calculator Component', () => {
     expect(screen.getByTestId('result')).toHaveTextContent('Result: 2');
   });
 
-  it('should show error for invalid input', async () => {
-    await userEvent.type(screen.getByTestId('num1-input'), 'abc');
-    await userEvent.type(screen.getByTestId('num2-input'), '3');
-    fireEvent.click(screen.getByTestId('add-button'));
-    expect(screen.getByTestId('error-message')).toHaveTextContent('Please enter valid numbers');
+  it('should perform division correctly', async () => {
+    await userEvent.type(screen.getByTestId('num1-input'), '4');
+    await userEvent.type(screen.getByTestId('num2-input'), '2');
+    fireEvent.click(screen.getByTestId('divide-button'));
+    expect(screen.getByTestId('result')).toHaveTextContent('Result: 2');
   });
 
   it('should show error for division by zero', async () => {
@@ -43,4 +43,19 @@ describe('Calculator Component', () => {
     fireEvent.click(screen.getByTestId('divide-button'));
     expect(screen.getByTestId('error-message')).toHaveTextContent('Division by zero is not allowed');
   });
+
+  it('should show error for invalid input', async () => {
+    await userEvent.type(screen.getByTestId('num1-input'), 'abc');
+    await userEvent.type(screen.getByTestId('num2-input'), '3');
+    fireEvent.click(screen.getByTestId('add-button'));
+    expect(screen.getByTestId('error-message')).toHaveTextContent('Please enter valid numbers');
+  });
+
+  it('should show error for invalid operation', async () => {
+    await userEvent.type(screen.getByTestId('num1-input'), '2');
+    await userEvent.type(screen.getByTestId('num2-input'), '2');
+    fireEvent.click(screen.getByTestId('percentage-button'));
+    expect(screen.getByTestId('error-message')).toHaveTextContent('Invalid operation');
+  });
+
 }); 
