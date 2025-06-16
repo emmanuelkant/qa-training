@@ -1,15 +1,21 @@
-import { Calculator } from './components/Calculator'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Navigation } from './components/Navigation';
+import { CalculatorPage } from './pages/CalculatorPage';
+import { HistoryPage } from './pages/HistoryPage';
 
 function App() {
   return (
-    <div>
-      <header>
-        <h1>QA Training Platform</h1>
-        <p>This is a simple application designed to demonstrate various testing methodologies.</p>
-      </header>
-      <Calculator />
-    </div>
-  )
+    <BrowserRouter>
+      <div>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Navigate to="/qa-training/" replace />} />
+          <Route path="/qa-training/" element={<CalculatorPage />} />
+          <Route path="/qa-training/history" element={<HistoryPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
