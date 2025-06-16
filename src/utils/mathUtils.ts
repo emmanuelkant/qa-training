@@ -30,8 +30,8 @@ export const multiply = (a: number, b: number): number => a * b;
  * @returns Quotient of a divided by b
  */
 export const divide = (a: number, b: number): number => {
-  if (b === 0) {
-    throw new Error('Division by zero is not allowed');
-  }
-  return a / b;
+    if (b === 0) {
+        throw new Error('Division by zero is not allowed');
+    }
+    return a / b;
 };

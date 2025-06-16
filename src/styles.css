@@ -20,8 +20,40 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 1rem;
+}
+
+/* Navigation */
+.navigation {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navigation a {
+  flex: 1;
+  text-align: center;
+  padding: 0.75rem;
+  color: #4a5568;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.navigation a:hover {
+  background-color: #f7fafc;
+  color: #2d3748;
+}
+
+.navigation a.active {
+  background-color: #4299e1;
+  color: white;
 }
 
 /* Header */
@@ -47,10 +79,12 @@ p {
 /* Calculator */
 .calculator {
   width: 100%;
+  max-width: 400px;
   background: white;
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
 .calculator h2 {
@@ -119,14 +153,66 @@ button:hover {
 }
 
 .result {
-  font-size: 1.5rem;
   color: #2f855a;
   background-color: #f0fff4;
   padding: 0.75rem;
   border-radius: 8px;
-  border: 2px solid #2f855a;
   text-align: center;
   font-weight: 500;
+}
+
+/* History */
+.history {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.history h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #2d3748;
+}
+
+.history p {
+  text-align: center;
+  color: #4a5568;
+}
+
+.clear-button {
+  margin-bottom: 1.5rem;
+  background-color: #e53e3e;
+}
+
+.clear-button:hover {
+  background-color: #c53030;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+  font-weight: 600;
+  color: #4a5568;
+  background-color: #f7fafc;
+}
+
+tr:hover {
+  background-color: #f7fafc;
 }
 
 /* Tablet and larger screens */
@@ -147,6 +233,10 @@ button:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+  }
+
+  .history {
+    padding: 2rem;
   }
 }
 
