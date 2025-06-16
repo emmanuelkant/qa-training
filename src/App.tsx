@@ -1,5 +1,3 @@
-import { Calculator } from './components/Calculator'
-
 function App() {
   return (
     <div>
@@ -7,7 +5,6 @@ function App() {
         <h1>QA Training Platform</h1>
         <p>This is a simple application designed to demonstrate various testing methodologies.</p>
       </header>
-      <Calculator />
     </div>
   )
 }
